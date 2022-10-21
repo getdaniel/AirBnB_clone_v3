@@ -15,6 +15,7 @@ def teardown_db(exception):
     if storage is not None:
         storage.close()
 
+
 @app.errorhandler(404)
 def handle_404(exception):
     """
