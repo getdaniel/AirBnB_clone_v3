@@ -10,7 +10,7 @@ app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def teardowni_db(exception):
+def teardown_db(exception):
     '''Closes connection to storage'''
     if storage is not None:
         storage.close()
