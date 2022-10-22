@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """ User APIRest
 """
-
 from models import storage
 from models.user import User
 from api.v1.views import app_views
 from flask import jsonify, abort, request
 
 
-@app_views.route('/users', methods=['GET'])
+@app_views.route('/users', strict_slashes=False, methods=['GET'])
 def user_list():
     """ list of an objetc in a dict form
     """
@@ -38,7 +37,7 @@ def user_id(user_id):
     abort(404)
 
 
-@app_views.route('/users', methods=['POST'])
+@app_views.route('/users', strict_slashes=False, methods=['POST'])
 def user_item():
     """ add a new item
     """
