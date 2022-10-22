@@ -9,7 +9,8 @@ from os import environ
 STORAGE_TYPE = environ.get('HBNB_TYPE_STORAGE')
 
 
-@app_views.route('/places/<place_id>/amenities', methods=['GET'])
+@app_views.route('/places/<place_id>/amenities', strict_slashes=False,
+                 methods=['GET'])
 def amenities_per_place(place_id=None):
     """
         reviews route to handle http method for requested reviews by place
