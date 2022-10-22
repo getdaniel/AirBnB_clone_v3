@@ -32,7 +32,7 @@ class User(BaseModel, Base):
                 User.__set_password(self, pwd)
         super().__init__(*args, **kwargs)
 
-    ef __set_password(self, pwd):
+    def __set_password(self, pwd):
         """
             Custom setter: encrypts password to MD5
         """
