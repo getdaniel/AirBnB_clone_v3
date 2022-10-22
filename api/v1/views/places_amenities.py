@@ -30,7 +30,7 @@ def get_place_amenity(place_id=None):
 
 
 @app_views.route("/places/<place_id>/amenities/<amenity_id>",
-                 methods=['DELETE'])
+                 strict_slashes=False, methods=['DELETE'])
 def delete_place_amenity(place_id, amenity_id):
     """
     Deletes a amenity from the database
